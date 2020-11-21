@@ -1,6 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-  $(".change-sleep").on("click", function(event) {
+  $(".change-devoured").on("click", function(event) {
     var id = $(this).data("id");
     var newDevoured = $(this).data("newDevoured");
 
@@ -21,13 +21,13 @@ $(function() {
     );
   });
 
-  $(".create-form").on("submit", function(event) {
+  $(".submit").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
     var newBurger = {
-      burger_name: $("#ca").val().trim(),
-      devoured: $("[name=devoured]:checked").val().trim()
+      burger_name: $("#bur").val().trim(),
+      //devoured: $("[name=devoured]:checked").val().trim()
     };
 
     // Send the POST request.
@@ -48,13 +48,15 @@ $(function() {
 
     // Send the DELETE request.
     $.ajax("/api/burgers/" + id, {
-      type: "DELETE"
+      type: "DELETE",
     }).then(
       function() {
-        console.log("deleted burger", id);
+        console.log("burger devoured", id);
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
+
+
 });
