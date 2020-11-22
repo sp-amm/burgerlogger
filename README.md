@@ -10,6 +10,7 @@ to generate HTML and a locally developed ORM. The MVC design pattern was also ut
 This is a restaurant app that let's users input the names of burgers. THese are then displayed on the left of the website. Each burger has a devour it button which when clicked moves it over ot the right.
 Every burger is stored in the database.
 
+## Website image - (locally deployed)
 <img src=public/assets/images/page.JPG>
 
 ## Table of Contents:
