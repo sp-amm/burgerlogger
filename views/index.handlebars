@@ -1,41 +1,48 @@
-<h1>Burger-Da-Burger!</h1>
-
-<h2>Eat Me!</h2>
 
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
+<div class="container">
+  <div class="row">
+      
+      <div class="col-sm">
+        <h2 class="text-center">Eat Me</h2>
+        <ul>
+          {{#each burgers}}
+            {{#unless devoured}}
+              {{> burgers/burger-block devoured=false}}
+            {{/unless}}
+          {{/each}}
+        </ul> 
+      </div>
+      
+      <div class="col-sm">
+        <h2 class="text-center">Devoured</h2>
+        <ul>
+          {{#each burgers}}
+            {{#if devoured}}
+              {{> burgers/burger-block devoured=true}}
+            {{/if}}
+          {{/each}}
+        </ul>
+      </div>
 
-<h2>Devoured!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="bur">Burger Name:</label>
-    <input type="text" id="bur" name="name">
   </div>
 
-   <button class="btn-primary submit" type="submit">Submit</button>
-</form>
-  
-  <!--<div class="form-group">
-    <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Yet to eat.
-  </div>-->
+  <div class="row justify-content">
+  <div class="col">
+      <form class="create-form">
+        <h2 class="text-center">Add a Burger</h2>
+        <div class="form-group text-center">
+          <label for="bur">Burger Name:</label>
+          <input type="text" id="bur" name="name">
+        </div>
 
- 
+        <button class="btn-dark submit img-center" type="submit">Submit</button>
+        <p class="text-center">Enter a burger you want to eat and click submit.</p>
+      
+      </form>
+    </div>
+  </div>
+
+</div>  
+
+
